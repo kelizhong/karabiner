@@ -1,0 +1,422 @@
+<?xml version="1.0"?>
+<root>
+    <!-- 设备定义 -->
+    <devicevendordef>
+        <vendorname>FILCO</vendorname>
+        <vendorid>0x0a5c</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>MINILA_KEYBOARD</productname>
+        <productid>0x8502</productid>
+    </deviceproductdef>
+    <devicevendordef>
+        <vendorname>POKER</vendorname>
+        <vendorid>0x0f39</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>POKER_KEYBOARD</productname>
+        <productid>0x0611</productid>
+    </deviceproductdef>
+    <devicevendordef>
+        <vendorname>LEOPOLD</vendorname>
+        <vendorid>0x04b4</vendorid>
+    </devicevendordef>
+    <deviceproductdef>
+        <productname>LEOPOLD_KEYBOARD</productname>
+        <productid>0x0101</productid>
+    </deviceproductdef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_Evernote</name>
+        <url type="file">/Applications/Evernote.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_Chrome</name>
+        <url type="file">/Applications/Google Chrome.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_Sublime</name>
+        <url type="file">/Applications/Sublime Text.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_iTerm</name>
+        <url type="file">/Applications/iTerm.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_IntelliJ</name>
+        <url type="file">/Applications/IntelliJ IDEA 15 CE.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_OutLook</name>
+        <url type="file">/Applications/Microsoft Outlook.app</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_YouDao</name>
+        <url type="file">/Applications/有道词典.app/</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_PyCharm</name>
+        <url type="file">/Applications/PyCharm CE.app/</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_Movist</name>
+        <url type="file">/Applications/Movist.app/</url>
+    </vkopenurldef>
+    <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
+        <url type="file">/Applications/Firefox.app/</url>
+    </vkopenurldef>
+    <modifierdef>HYPER</modifierdef>
+    <!-- 将App键映射为一个修饰键 -->
+    <modifierdef>PC_APPLICATION_MOD</modifierdef>
+    <windownamedef>
+        <name>Tmux</name>
+        <regex>tmux</regex>
+    </windownamedef>
+    <item>
+        <name>For Poker</name>
+        <item>
+            <device_only>DeviceVendor::POKER,DeviceProduct::POKER_KEYBOARD</device_only>
+            <name>OPTION_L Keys + WASD to arrow</name>
+            <identifier>private.poker.arrows</identifier>
+            <autogen>
+                __KeyToKey__ KeyCode::E, ModifierFlag::OPTION_L, KeyCode::CURSOR_UP
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::S, ModifierFlag::OPTION_L, KeyCode::CURSOR_LEFT
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::D, ModifierFlag::OPTION_L, KeyCode::CURSOR_DOWN
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::F, ModifierFlag::OPTION_L, KeyCode::CURSOR_RIGHT
+            </autogen>
+        </item>
+    </item>
+    <item>
+        <name>For LEOPOLD</name>
+        <item>
+            <device_only>DeviceVendor::LEOPOLD,DeviceProduct::LEOPOLD_KEYBOARD</device_only>
+            <name>OPTION_L Keys + WASD to arrow</name>
+            <identifier>private.leopold.arrows</identifier>
+            <autogen>
+                __KeyToKey__ KeyCode::E, ModifierFlag::OPTION_L, KeyCode::CURSOR_UP
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::S, ModifierFlag::OPTION_L, KeyCode::CURSOR_LEFT
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::D, ModifierFlag::OPTION_L, KeyCode::CURSOR_DOWN
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::F, ModifierFlag::OPTION_L, KeyCode::CURSOR_RIGHT
+            </autogen>
+        </item>
+    </item>
+    <item>
+        <name>For Filco minilar air</name>
+        <item>
+            <device_only>DeviceVendor::FILCO,DeviceProduct::MINILA_KEYBOARD</device_only>
+            <name>Click APP to change Inpur Source</name>
+            <identifier>private.App.inputSource</identifier>
+            <autogen>__KeyOverlaidModifier__ KeyCode::I,ModifierFlag::PC_APPLICATION_MOD, KeyCode::SPACE,ModifierFlag::COMMAND_L</autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::E, ModifierFlag::PC_APPLICATION_MOD | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTSOURCE_US
+            </autogen>
+            <autogen>
+                __KeyToKey__ KeyCode::C, ModifierFlag::PC_APPLICATION_MOD | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_SIMPLIFIED
+            </autogen>
+        </item>
+        <item>
+            <device_only>DeviceVendor::FILCO,DeviceProduct::MINILA_KEYBOARD</device_only>
+            <name>Swap Shift_R and Delete</name>
+            <identifier>private.filco.swap_shiftR_delete</identifier>
+            <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::FORWARD_DELETE</autogen>
+            <autogen>__KeyToKey__ KeyCode::FORWARD_DELETE, KeyCode::SHIFT_R</autogen>
+        </item>
+        <item>
+            <device_only>DeviceVendor::FILCO,DeviceProduct::MINILA_KEYBOARD</device_only>
+            <name>Application toggles Normal Mode</name>
+            <identifier>remap.vimnormal_app_toggle</identifier>
+            <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+            <autogen>
+                __KeyOverlaidModifier__ KeyCode::PC_APPLICATION, KeyCode::PC_APPLICATION, KeyCode::VK_LOCK_ALL_FORCE_OFF, KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal, {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+            </autogen>
+        </item>
+    </item>
+    <item>
+        <name>For All Keyboard</name>
+        <item>
+            <name>F19(Capslock) as HyperKey</name>
+            <appendix>This maps F19 to Hyper Modifier</appendix>
+            <appendix>(+ When you type Capslock only, send Escape)</appendix>
+            <identifier>private.HyperKey</identifier>
+            <autogen>__KeyOverlaidModifier__ KeyCode::F19, KeyCode::VK_MODIFIER_HYPER, KeyCode::ESCAPE</autogen>
+        </item>
+        <item>
+            <!--https://github.com/tekezo/Karabiner/blob/master/src/core/server/Resources/include/checkbox/standards/control.xml-->
+            <name>OPTION_L x2 to COMMAND_L+Space</name>
+            <identifier>remap.optionL_x2_to_commandLspace</identifier>
+            <autogen>__DoublePressModifier__ KeyCode::OPTION_L, KeyCode::OPTION_L, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
+        </item>
+        <item>
+            <name>google chrome</name>
+            <item>
+                <only>GOOGLE_CHROME</only>
+                <name>Option_L +j/k to previous and next tab</name>
+                <identifier>remap.chrome.optionL_jk_to_previous_next_tab</identifier>
+                <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL</autogen>
+                <autogen>__KeyToKey__ KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT</autogen>
+            </item>
+        </item>
+        <item>
+            <name>function for All</name>
+            <item>
+                <name>Tap shift to move over words</name>
+                <appendix>Shift keys move the cursor one word forward or backward when pressed alone. When used with other keys they act as normal shifts.</appendix>
+                <identifier>private.shifts_to_forward_backward_word</identifier>
+                <autogen>--KeyOverlaidModifier-- KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE, KeyCode::CONTROL_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+                <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+            </item>
+            <item>
+                <name>F5/F6 to brightness up and down</name>
+                <appendix>F5 for brightness down, F6 for brightness up</appendix>
+                <identifier>private.F5F6ForBrightnessControl</identifier>
+                <autogen>__KeyToKey__ KeyCode::F5, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+                <autogen>__KeyToKey__ KeyCode::F6, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+            </item>
+            <item>
+                <name>Double Click COMMAND Left to switch Inpur Source</name>
+                <identifier>private.command.left.switch.inputSource</identifier>
+                <autogen>--DoublePressModifier-- KeyCode::COMMAND_L, KeyCode::VK_LAZY_COMMAND_L, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
+            </item>
+            <item>
+                <name>select text to head, tail, top and bottom</name>
+                <item>
+                    <name>Holding Shift+"S" Key to select text to line head</name>
+                    <identifier>remap.holding_shift_s_to_select_to_line_head</identifier>
+                    <autogen>__HoldingKeyToKey__ KeyCode::S, VK_SHIFT | ModifierFlag::NONE, KeyCode::S, VK_SHIFT, KeyCode::VK_NONE, KeyCode::CURSOR_LEFT,ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+                </item>
+                <item>
+                    <name>Holding Shift+"F" Key to select text to line tail</name>
+                    <identifier>remap.holding_shift_f_to_select_to_line_tail</identifier>
+                    <autogen>__HoldingKeyToKey__ KeyCode::F, VK_SHIFT | ModifierFlag::NONE, KeyCode::F, VK_SHIFT, KeyCode::VK_NONE, KeyCode::CURSOR_RIGHT,ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+                </item>
+                <item>
+                    <name>Holding Shift+"D" Key to select text to text bottom</name>
+                    <identifier>remap.holding_shift_d_to_select_to_text_bottom</identifier>
+                    <autogen>__HoldingKeyToKey__ KeyCode::D, VK_SHIFT | ModifierFlag::NONE, KeyCode::D, VK_SHIFT, KeyCode::VK_NONE, KeyCode::CURSOR_DOWN,ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+                </item>
+                <item>
+                    <name>Holding Shift+"E" Key to select text to text top</name>
+                    <identifier>remap.holding_shift_e_to_select_to_text_top</identifier>
+                    <autogen>__HoldingKeyToKey__ KeyCode::E, VK_SHIFT | ModifierFlag::NONE, KeyCode::E, VK_SHIFT, KeyCode::VK_NONE, KeyCode::CURSOR_UP,ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+                </item>
+            </item>
+        </item>
+        <item>
+            <name>function for HyperKey</name>
+            <item>
+                <name>Hyper + Space To Capslock</name>
+                <appendix>Hyper(cmd+ctrl+shift+opt)+space, send Capslock</appendix>
+                <identifier>private.hyperspace2enter</identifier>
+                <autogen>
+                    --KeyToKey-- KeyCode::SPACE, ModifierFlag::HYPER, KeyCode::CAPSLOCK
+                </autogen>
+            </item>
+            <item>
+                <name>App Launch shortcuts</name>
+                <item>
+                    <name>Set Hyper + E to launch Evernote</name>
+                    <identifier>private.open_evernote</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::E, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_Evernote
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + C to launch Chrome</name>
+                    <identifier>private.open_chrome</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::C, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_Chrome,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + S to launch Sublime</name>
+                    <identifier>private.open_sublime</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::S, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_Sublime,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + T to launch iTerm</name>
+                    <identifier>private.open_iterm</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::T, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_iTerm,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + I to launch IntelliJ</name>
+                    <identifier>private.open_intelliJ</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::I, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_IntelliJ,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + O to launch OutLook</name>
+                    <identifier>private.open_outlook</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::O, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_OutLook,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + Y to launch 有道词典</name>
+                    <identifier>private.open_youdao</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::Y, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_YouDao,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + P to launch PyCharm</name>
+                    <identifier>private.open_pycharm</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::P, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_PyCharm,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + M to launch Movist</name>
+                    <identifier>private.open_movist</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::M, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_Movist,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set Hyper + F to launch Firefox</name>
+                    <identifier>private.open_firefox</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::F, ModifierFlag::HYPER, KeyCode::VK_OPEN_URL_APP_Firefox,
+                    </autogen>
+                </item>
+            </item>
+        </item>
+        <item>
+            <name>function for APP</name>
+            <!-- 下面这一行将App键映射为一个虚拟修饰键，虚拟修饰键的名称为PC_APPLICATION_MOD -->
+            <item>
+                <name>Maps APP to Modifier</name>
+                <appendix>This Maps APP to Modifier</appendix>
+                <identifier>private.appkey_to_modifier</identifier>
+                <autogen>__KeyOverlaidModifier__ KeyCode::PC_APPLICATION, KeyCode::VK_MODIFIER_PC_APPLICATION_MOD, KeyCode::ESCAPE</autogen>
+            </item>
+            <item>
+                <name>App Launch shortcuts</name>
+                <item>
+                    <name>Set App + E to launch Evernote</name>
+                    <identifier>private.app_open_evernote</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::E, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_Evernote
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + C to launch Chrome</name>
+                    <identifier>private.app_open_chrome</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::C, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_Chrome,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + S to launch Sublime</name>
+                    <identifier>private.app_open_sublime</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::S, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_Sublime,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + T to launch iTerm</name>
+                    <identifier>private.app_open_iterm</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::T, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_iTerm,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + I to launch IntelliJ</name>
+                    <identifier>private.app_open_intelliJ</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::I, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_IntelliJ,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + O to launch OutLook</name>
+                    <identifier>private.app_open_outlook</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::O, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_OutLook,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + Y to launch 有道词典</name>
+                    <identifier>private.app_open_youdao</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::Y, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_YouDao,
+                    </autogen>
+                </item>
+                <item>
+                    <name>Set APP + P to launch PyCharm</name>
+                    <identifier>private.app_open_pycharm</identifier>
+                    <autogen>
+                        __KeyToKey__ KeyCode::P, ModifierFlag::PC_APPLICATION_MOD, KeyCode::VK_OPEN_URL_APP_PyCharm,
+                    </autogen>
+                </item>
+            </item>
+        </item>
+    </item>
+    <item>
+        <name>Tmux bindings</name>
+        <item>
+            <name>Right ⌥ to ⌃B (prefix)</name>
+            <identifier>private.right_opt_to_ctrl_b</identifier>
+            <only>TERMINAL</only>
+            <windowname_only>Tmux</windowname_only>
+            <autogen> __KeyToKey__ KeyCode::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L </autogen>
+        </item>
+        <item>
+            <name>Right ⌥ + Key to ⌃b + Key</name>
+            <identifier>private.right_opt_key_to_ctrl_b_key</identifier>
+            <only>TERMINAL</only>
+            <windowname_only>Tmux</windowname_only>
+            <autogen> __KeyOverlaidModifier__ KeyCode::OPTION_R, KeyCode::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_0, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_0 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_1, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_1 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_2, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_2 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_3, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_3 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_4, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_4 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_5, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_5 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_6, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_6 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_7, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_7 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_8, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_8 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_9, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_9 </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_UP, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L </autogen>
+        </item>
+        <item>
+            <name>Right ⌘ + Key to ⌃b + Key</name>
+            <identifier>private.right_cmd_key_to_ctrl_b_key</identifier>
+            <only>TERMINAL</only>
+            <windowname_only>Tmux</windowname_only>
+            <autogen> __KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_0, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_0 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_1 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_2, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_2 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_3, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_3 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_4, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_4 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_5, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_5 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_6, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_6 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_7, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_7 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_8, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_8 </autogen>
+            <autogen> __KeyToKey__ KeyCode::KEY_9, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::KEY_9 </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_UP, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L </autogen>
+            <autogen> __KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L </autogen>
+        </item>
+    </item>
+</root>
